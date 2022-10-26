@@ -30,6 +30,8 @@ string readName ( string firstName, string lastName )
     infile >> header;
     getline(infile, header);
     infile >> firstName >> lastName;
-    cout << firstName << lastName<< endl;
-    return firstName;
+    cout << firstName << " "<< lastName<< endl;
+    return 0;
 }
+
+
