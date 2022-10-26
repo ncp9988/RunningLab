@@ -11,27 +11,46 @@
 using namespace std;
 
 string readName ( string firstName, string lastName );
+int readTime ( int minute, int second );
+
 
 
 int main() {
-    string firstName, lastName;
-    
-    cout <<readName (firstName,lastName )<< endl;;
-
-
-    return 0;
-}
-
-string readName ( string firstName, string lastName )
-{
     ifstream infile;
-    infile.open ("Result.txt");
-    string header;
-    infile >> header;
-    getline(infile, header);
-    infile >> firstName >> lastName;
-    cout << firstName << " "<< lastName<< endl;
+    infile.open("Result.txt");
+    string line;
+    getline(infile, line);
+    string name = readName(infile);
+    string team = readName(infile);
+    
+    
+
+    
     return 0;
 }
 
+string readName ( ifstream&infile )
+{
+    int minute, second;
+    string firstName;
+    infile >> firstName;
+    return firstName;
+}
 
+int readTime (ifstream&infile)
+{
+    int minute, second;
+    string header;
+    getline(infile, header);
+    string firsName, team;
+    getline (infile, firstName);
+    getline (infile, team);
+    infile >> minute;
+    infile.ignore(10, ':');
+    infile>> second;
+    return minute*60+second;
+
+    
+
+    return 0;
+}
