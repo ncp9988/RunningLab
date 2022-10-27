@@ -40,12 +40,20 @@ void object1(int heat) {
     }
     else
     {
-        cout << "Heat 2:"<< endl;
-        infile.ignore(10000, 'Heat');
-        string line;
         getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
+//        getline(infile, line);
 
-
+        cout << "Heat 2:"<< endl;
         
     };
     for (int i =1; i <= 21; i++)
@@ -60,8 +68,6 @@ void object1(int heat) {
         cout << name << " "<< team <<" "<< (time1 + time2 + time3)<< " s" <<endl;
     }
     
-    
-    //return 0;
 }
 
 int main ()
