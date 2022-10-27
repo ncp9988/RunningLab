@@ -154,25 +154,21 @@ void object2(int heat) {
         int lap2= readTime(infile);
         int lap3= readTime(infile);
         
-    
-//        cout <<"lap1: " << name << " "<< team <<" "<< lap1<< " s" <<endl;
-//        cout <<"lap2: "<< name << " "<< team <<" "<< lap2<< " s" <<endl;
-//        cout <<"lap3: "<< name << " "<< team <<" "<< lap3<< " s" <<endl;
-        
         if (1==1)
         {
             total1 =(total1+ lap1);
             total2 =(total2+ lap2);
             total3 =(total3+ lap3);
-
         }
-       // cout << total1<< " " << total2 << " "<< total3 << endl;
 
         
     }
-    cout <<"Lap1:"<< total1/60 << ":"<< total1%60<< "s"<< endl;
-    cout <<"Lap2:"<< total2/60 << ":"<< total2%60<< "s"<<endl;
-    cout <<"Lap3:"<< total1/60 << ":"<< total3%60<< "s"<<endl;
+    cout << total1<< " " << total2 << " "<< total3 << endl;
+    
+
+    cout <<"Avg-lap1: "<< (total1/totalRunner("Result.txt"))/60<< ":"<<(total1/totalRunner("Result.txt"))%60<< "s"<< endl;
+    cout <<"Avg-lap2: "<< (total2/totalRunner("Result.txt"))/60<< ":"<<(total2/totalRunner("Result.txt"))%60<< "s"<< endl;
+    cout <<"Avg-lap3: "<< (total3/totalRunner("Result.txt"))/60<< ":"<<(total3/totalRunner("Result.txt"))%60<< "s"<< endl;
 
     cout << " ---------------------------------------------------------------"<< endl;
 }
