@@ -33,24 +33,43 @@ void object1(int heat) {
     infile.open("Result.txt");
     string line;
     if (heat==1)
+    {
         getline(infile, line);
-    else ;
-    string name = readName(infile);
-    string team = readName(infile);
-    
-    int time1= readTime(infile);
-    int time2= readTime(infile);
-    int time3= readTime(infile);
+        cout << "Heat 1:"<< endl;
+        
+    }
+    else
+    {
+        cout << "Heat 2:"<< endl;
+        infile.ignore(10000, 'Heat');
+        string line;
+        getline(infile, line);
 
-    cout << name << " "<< team <<" "<< (time1 + time2 + time3)<< " s" <<endl;
+
+        
+    };
+    for (int i =1; i <= 21; i++)
+    {
+        string name = readName(infile);
+        string team = readName(infile);
+        
+        int time1= readTime(infile);
+        int time2= readTime(infile);
+        int time3= readTime(infile);
+        
+        cout << name << " "<< team <<" "<< (time1 + time2 + time3)<< " s" <<endl;
+    }
+    
     
     //return 0;
 }
 
 int main ()
 {
-    object1(heat=1);
-}
+    
+        object1(1);
+    
+    }
 
 
 
