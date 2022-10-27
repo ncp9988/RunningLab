@@ -41,22 +41,23 @@ void object1(int heat) {
     else
     {
         getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
-//        getline(infile, line);
+        string runner;
+        getline(infile, runner);
+        getline(infile, runner);
+        getline(infile, runner);
+        getline(infile, runner);
+        getline(infile, runner);
+        getline(infile, runner);
+        getline(infile, runner);
+        getline(infile, runner);
+        getline(infile, runner);
+        getline(infile, runner);
+        getline(infile, runner);
 
         cout << "Heat 2:"<< endl;
         
     };
-    for (int i =1; i <= 21; i++)
+    for (int i =1; i <= 9; i++)
     {
         string name = readName(infile);
         string team = readName(infile);
@@ -64,17 +65,14 @@ void object1(int heat) {
         int time1= readTime(infile);
         int time2= readTime(infile);
         int time3= readTime(infile);
-        
         cout << name << " "<< team <<" "<< (time1 + time2 + time3)<< " s" <<endl;
     }
-    
 }
-
 int main ()
 {
-    
         object1(1);
-    
+    object1(2);
+
     }
 
 
