@@ -163,29 +163,11 @@ void object2(int heat) {
             total3 =(total3+ lap3);
             
         }
-        if ( lap1 < total1)
-        {
-            below += name + " ";
-        }
-        else
-            above += name + " ";
-        if ( lap2 < total2)
-        {
-            below += name + " ";        }
-        else
-            above += name + " ";
-        if ( lap3 < total3)
-        {
-            below += name + " ";        }
-        else
-            above += name + " ";
-        
         
         
     }
     cout << total1<< " " << total2 << " "<< total3 << endl;
-    cout << below << endl;
-    cout << above << endl;
+   
     
 
     cout <<"Avg-lap1: "<< (total1/totalRunner("Result.txt"))/60<< ":"<<(total1/totalRunner("Result.txt"))%60<< "s"<< endl;
@@ -198,10 +180,26 @@ void object2(int heat) {
 }
 
 
+//if ( lap1 < total1)
+//{
+//    below += name + " ";
+//}
+//else
+//    above += name + " ";
+//if ( lap2 < total2)
+//{
+//    below += name + " ";        }
+//else
+//    above += name + " ";
+//if ( lap3 < total3)
+//{
+//    below += name + " ";        }
+//else
+//    above += name + " ";
 
 
-
-
+cout << below << endl;
+//cout << above << endl;
 
 
 int main ()
