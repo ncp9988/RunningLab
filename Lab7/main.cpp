@@ -146,30 +146,45 @@ void object2(int heat) {
     int total3 = 0;
     string below = "Below :";
     string above = "Abvove :";
-
+    string name, team;
+    int lap1, lap2, lap3;
     
     for (int i =1; i <= totalRunner("Result.txt"); i++)
     {
-        string name = readName(infile);
-        string team = readName(infile);
-        int lap1= readTime(infile);
-        int lap2= readTime(infile);
-        int lap3= readTime(infile);
+        name = readName(infile);
+        team = readName(infile);
+        lap1= readTime(infile);
+        lap2= readTime(infile);
+        lap3= readTime(infile);
+        
         
         if (1==1)
         {
             total1 =(total1+ lap1);
             total2 =(total2+ lap2);
             total3 =(total3+ lap3);
-            
         }
         
         
     }
+//    if ( lap1 < total1/9)
+//    {
+//        below += name + " ";
+//    }
+//    else
+//        above += name + " ";
+//    if ( lap2 < total2/9)
+//    {
+//        below += name + " ";        }
+//    else
+//        above += name + " ";
+//    if ( lap3 < total3/9)
+//    {
+//        below += name + " ";        }
+//    else
+//        above += name + " ";
     cout << total1<< " " << total2 << " "<< total3 << endl;
    
-    
-
     cout <<"Avg-lap1: "<< (total1/totalRunner("Result.txt"))/60<< ":"<<(total1/totalRunner("Result.txt"))%60<< "s"<< endl;
     
 
@@ -177,29 +192,79 @@ void object2(int heat) {
     cout <<"Avg-lap3: "<< (total3/totalRunner("Result.txt"))/60<< ":"<<(total3/totalRunner("Result.txt"))%60<< "s"<< endl;
 
     cout << " ---------------------------------------------------------------"<< endl;
+    
+    
+    
+
+
 }
 
 
-//if ( lap1 < total1)
-//{
-//    below += name + " ";
-//}
-//else
-//    above += name + " ";
-//if ( lap2 < total2)
-//{
-//    below += name + " ";        }
-//else
-//    above += name + " ";
-//if ( lap3 < total3)
-//{
-//    below += name + " ";        }
-//else
-//    above += name + " ";
+void object3(int heat) {
+    cout << "OBJECT 3:" << endl;
+    cout << " " << endl;
+
+    ifstream infile;
+    infile.open("Result.txt");
+    string line;
+    if (heat==1)
+    {
+        getline(infile, line);
+        cout << "Heat 1:"<< endl;
+        
+    }
+    else
+    {
+        getline(infile, line);
+        string runner;
+        for (int i =0; i <= totalRunner("Result.txt")+1 ; i++)
+            getline(infile, runner);
+        
+        cout << "Heat 2:"<< endl;
+    };
+    
+   
+    string below = "Below :";
+    string above = "Abvove :";
+    string name, team;
+    int lap1, lap2, lap3;
+    
+    cout << "Lap1:" << setw(13) << "1"<< setw(10)<< "2"<< setw(10)<< "3" << endl;
+    for (int i =1; i <= totalRunner("Result.txt"); i++)
+    {
+        name = readName(infile);
+        team = readName(infile);
+        lap1= readTime(infile);
+        lap2= readTime(infile);
+        lap3= readTime(infile);
+        
+        cout <<setw(8)<< name << setw(10)<< lap1/60 << ":"<< lap1%60<< setw(7)<< lap2/60 << ":"<< lap2%60<<setw(7)<< lap3/60 << ":"<< lap3%60<<endl;
+        
+        //cout << lap1 << " " << lap2 << " "<< lap3 << endl;
+        
+        
+       
+            
+    }
+    
+    
+    
+
+    cout << " ---------------------------------------------------------------"<< endl;
+    
+    
+    
 
 
-cout << below << endl;
-//cout << above << endl;
+}
+
+
+
+
+
+
+
+
 
 
 int main ()
@@ -210,6 +275,8 @@ int main ()
 
     object2(1);
     object2(2);
+    object3(1);
+    
 
     }
 
