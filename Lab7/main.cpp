@@ -229,7 +229,7 @@ void object3(int heat) {
     string name, team;
     int lap1, lap2, lap3;
     
-    cout << "Lap1:" << setw(13) << "1"<< setw(10)<< "2"<< setw(10)<< "3" << endl;
+    cout << "Lap" << setw(15) << "1"<< setw(10)<< "2"<< setw(10)<< "3" << endl;
     for (int i =1; i <= totalRunner("Result.txt"); i++)
     {
         name = readName(infile);
@@ -243,7 +243,14 @@ void object3(int heat) {
         //cout << lap1 << " " << lap2 << " "<< lap3 << endl;
         
         
-       
+        if (lap1<lap2 )
+            cout<<setw(28)<< "+"<<(lap2-lap1);
+        else
+            cout<<setw(28)<< "-"<<( lap1-lap2);
+        if (lap2<lap3 )
+            cout<<setw(9)<< "+"<< lap3-lap2<< endl;
+        else
+            cout<<setw(9)<< "-"<< lap2-lap3<<endl;
             
     }
     
@@ -275,7 +282,10 @@ int main ()
 
     object2(1);
     object2(2);
+    
     object3(1);
+    object3(2);
+
     
 
     }
