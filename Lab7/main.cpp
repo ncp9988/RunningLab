@@ -183,7 +183,9 @@ void object2(int heat) {
 //        below += name + " ";        }
 //    else
 //        above += name + " ";
-    cout << total1<< " " << total2 << " "<< total3 << endl;
+    
+    
+    //cout << total1<< " " << total2 << " "<< total3 << endl;
    
     cout <<"Avg-lap1: "<< (total1/totalRunner("Result.txt"))/60<< ":"<<(total1/totalRunner("Result.txt"))%60<< "s"<< endl;
     
@@ -253,16 +255,63 @@ void object3(int heat) {
             cout<<setw(9)<< "-"<< lap2-lap3<<endl;
             
     }
-    
-    
-    
-
     cout << " ---------------------------------------------------------------"<< endl;
     
-    
-    
+}
 
 
+
+
+void object4(int heat) {
+    cout << "OBJECT 4:" << endl;
+    cout << " " << endl;
+
+    ifstream infile;
+    infile.open("Result.txt");
+    string line;
+    if (heat==1)
+    {
+        getline(infile, line);
+        cout << "Heat 1:"<< endl;
+        
+    }
+    else
+    {
+        getline(infile, line);
+        string runner;
+        for (int i =0; i <= totalRunner("Result.txt")+1 ; i++)
+            getline(infile, runner);
+        
+        cout << "Heat 2:"<< endl;
+    };
+    
+    string redTeam = " ";
+    string blueTeam = " ";
+    string greenTeam = " ";
+
+    for (int i =1; i <= totalRunner("Result.txt"); i++)
+    {
+        string name = readName(infile);
+        string team = readName(infile);
+        
+        int time1= readTime(infile);
+        int time2= readTime(infile);
+        int time3= readTime(infile);
+        //int total =time1 + time2 + time3;
+       
+        if (team == "Red")
+            redTeam += name + " ";
+        if (team == "Blue")
+            blueTeam += name+ " ";
+        if (team == "Green")
+            greenTeam += name+ " ";
+    }
+    cout << "Red: " << redTeam<< endl;
+    cout << "Blue: " << blueTeam<< endl;
+    cout << "Green: " << greenTeam<< endl;
+
+   
+    cout << " ---------------------------------------------------------------"<< endl;
 }
 
 
@@ -285,6 +334,8 @@ int main ()
     
     object3(1);
     object3(2);
+    
+    object4(1);
 
     
 
