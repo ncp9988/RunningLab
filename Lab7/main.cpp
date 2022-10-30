@@ -10,7 +10,12 @@
 #include <string>
 using namespace std;
 
-
+int smaller (int x, int y)
+{
+    if (x <y)
+    return x;
+    return y;
+}
 int totalRunner (string fileName)
 {
     ifstream infile;
@@ -428,6 +433,311 @@ void object4(int heat) {
 
 
 
+void object5(int heat) {
+    cout << "OBJECT 5:" << endl;
+    cout << " " << endl;
+
+    ifstream infile;
+    infile.open("Result.txt");
+    string line;
+    if (heat==1)
+    {
+        getline(infile, line);
+        cout << "Heat 1:"<< endl;
+        
+    }
+    else
+    {
+        getline(infile, line);
+        string runner;
+        for (int i =0; i <= totalRunner("Result.txt")+1 ; i++)
+            getline(infile, runner);
+        
+        cout << "Heat 2:"<< endl;
+    };
+    
+    
+    
+    
+    int Rresult1=0;
+    int Rresult2=0;
+    int Rresult3=0;
+    int Rresult4=0;
+    int Rresult5=0;
+    int Rresult6=0;
+    
+    string Rstring1="";
+    string Rstring2="";
+    string Rstring3="";
+    string Rstring4="";
+    string Rstring5="";
+    string Rstring6="";
+
+
+    
+    
+    int Bresult1=0;
+    int Bresult2=0;
+    int Bresult3=0;
+    int Bresult4=0;
+    int Bresult5=0;
+    int Bresult6=0;
+    
+    string Bstring1="";
+    string Bstring2="";
+    string Bstring3="";
+    string Bstring4="";
+    string Bstring5="";
+    string Bstring6="";
+    
+    int Gresult1=0;
+    int Gresult2=0;
+    int Gresult3=0;
+    int Gresult4=0;
+    int Gresult5=0;
+    int Gresult6=0;
+    
+    string Gstring1="";
+    string Gstring2="";
+    string Gstring3="";
+    string Gstring4="";
+    string Gstring5="";
+    string Gstring6="";
+
+
+    string team;
+    
+    for (int i =1; i <= totalRunner("Result.txt"); i++)
+    {
+        string name = readName(infile);
+        string team = readName(infile);
+        
+        int lap1= readTime(infile);
+        int lap2= readTime(infile);
+        int lap3= readTime(infile);
+       
+        if ( team == "Red")
+        {
+            if ( name == "Ayako")
+            {
+                Rresult1 += lap1;
+                Rresult2 += lap1;
+                Rresult3 += lap2;
+                Rresult4 += lap2;
+                Rresult5 += lap3;
+                Rresult6 += lap3;
+                
+                Rstring1= "Ayako(lap1)  ";
+                Rstring2= "Ayako(lap1)  ";
+                Rstring3= "Ayako(lap2)  ";
+                Rstring4= "Ayako(lap2)  ";
+                Rstring5= "Ayako(lap3)  ";
+                Rstring6= "Ayako(lap3)  ";
+            }
+            if ( name == "Mallory" )
+            {
+                Rresult1 += lap2;
+                Rresult2 += lap3;
+                Rresult3 += lap1;
+                Rresult4 += lap3;
+                Rresult5 += lap1;
+                Rresult6 += lap2;
+                
+                Rstring1 += "Mallory(lap2)  ";
+                Rstring2 += "Mallory(lap3)  ";
+                Rstring3 += "Mallory(lap1)  ";
+                Rstring4 += "Mallory(lap3)  ";
+                Rstring5 += "Mallory(lap1)  ";
+                Rstring6 += "Mallory(lap2)  ";
+
+                
+            }
+            
+            if (name == "Yuki")
+            {
+                Rresult1 += lap3;
+                Rresult2 += lap2;
+                Rresult3 += lap3;
+                Rresult4 += lap1;
+                Rresult5 += lap2;
+                Rresult6 += lap1;
+                
+                Rstring1 += "Yuki(lap3)  ";
+                Rstring2 += "Yuki(lap2)  ";
+                Rstring3 += "Yuki(lap3)  ";
+                Rstring4 += "Yuki(lap1)  ";
+                Rstring5 += "Yuki(lap2)  ";
+                Rstring6 += "Yuki(lap1)  ";
+
+
+            }
+        }
+            if ( team == "Blue")
+            {
+                if ( name == "Akano")
+                {
+                    Bresult1 += lap1;
+                    Bresult2 += lap1;
+                    Bresult3 += lap2;
+                    Bresult4 += lap2;
+                    Bresult5 += lap3;
+                    Bresult6 += lap3;
+                    
+                    Bstring1= "Akano(lap1)  ";
+                    Bstring2= "Akako(lap1)  ";
+                    Bstring3= "Akako(lap2)  ";
+                    Bstring4= "Akako(lap2)  ";
+                    Bstring5= "Akako(lap3)  ";
+                    Bstring6= "Akako(lap3)  ";
+                }
+                if ( name == "Rika" )
+                {
+                    Bresult1 += lap2;
+                    Bresult2 += lap3;
+                    Bresult3 += lap1;
+                    Bresult4 += lap3;
+                    Bresult5 += lap1;
+                    Bresult6 += lap2;
+                    
+                    Bstring1 += "Rika(lap2)  ";
+                    Bstring2 += "Rika(lap3)  ";
+                    Bstring3 += "Rika(lap1)  ";
+                    Bstring4 += "Rika(lap3)  ";
+                    Bstring5 += "Rika(lap1)  ";
+                    Bstring6 += "Rika(lap2)  ";
+                }
+                
+                if (name == "Felicity")
+                {
+                    Bresult1 += lap3;
+                    Bresult2 += lap2;
+                    Bresult3 += lap3;
+                    Bresult4 += lap1;
+                    Bresult5 += lap2;
+                    Bresult6 += lap1;
+                    
+                    Bstring1 += "Felicity(lap3)  ";
+                    Bstring2 += "Felicity(lap2)  ";
+                    Bstring3 += "Felicity(lap3)  ";
+                    Bstring4 += "Felicity(lap1)  ";
+                    Bstring5 += "Felicity(lap2)  ";
+                    Bstring6 += "Felicity(lap1)  ";
+
+
+
+                }
+            }
+        if ( team == "Green")
+        {
+            if ( name == "Itsuki")
+            {
+                Gresult1 += lap1;
+                Gresult2 += lap1;
+                Gresult3 += lap2;
+                Gresult4 += lap2;
+                Gresult5 += lap3;
+                Gresult6 += lap3;
+                
+                
+                Gstring1= "Itsuki(lap1)  ";
+                Gstring2= "Itsuki(lap1)  ";
+                Gstring3= "Itsuki(lap2)  ";
+                Gstring4= "Itsuki(lap2)  ";
+                Gstring5= "Itsuki(lap3)  ";
+                Gstring6= "Itsuki(lap3)  ";
+            }
+            if ( name == "Kaito" )
+            {
+                Gresult1 += lap2;
+                Gresult2 += lap3;
+                Gresult3 += lap1;
+                Gresult4 += lap3;
+                Gresult5 += lap1;
+                Gresult6 += lap2;
+                
+                Gstring1 += "Kaito(lap2)  ";
+                Gstring2 += "Kaito(lap3)  ";
+                Gstring3 += "Kaito(lap1)  ";
+                Gstring4 += "Kaito(lap3)  ";
+                Gstring5 += "Kaito(lap1)  ";
+                Gstring6 += "Kaito(lap2)  ";
+            }
+            
+            if (name == "Shizuku")
+            {
+                Gresult1 += lap3;
+                Gresult2 += lap2;
+                Gresult3 += lap3;
+                Gresult4 += lap1;
+                Gresult5 += lap2;
+                Gresult6 += lap1;
+                
+                Gstring1 += "Shizuku(lap3)  ";
+                Gstring2 += "Shizuku(lap2)  ";
+                Gstring3 += "Shizuku(lap3)  ";
+                Gstring4 += "Shizuku(lap1)  ";
+                Gstring5 += "Shizuku(lap2)  ";
+                Gstring6 += "Shizuku(lap1)  ";
+            }
+        }
+        
+        
+    }
+    
+    
+    cout << "Final Red team "<<smaller ( Rresult1 , smaller(Rresult2,smaller (Rresult3, smaller(Rresult4, smaller (Rresult5, Rresult6)))))/60 << ":"<<smaller ( Rresult1 , smaller(Rresult2,smaller (Rresult3, smaller(Rresult4, smaller (Rresult5, Rresult6)))))%60 << " s"<< endl;
+    if ( smaller ( Rresult1 , smaller(Rresult2,smaller (Rresult3, smaller(Rresult4, smaller (Rresult5, Rresult6))))) == Rresult1)
+        cout << Rstring1 << endl;
+    if ( smaller ( Rresult1 , smaller(Rresult2,smaller (Rresult3, smaller(Rresult4, smaller (Rresult5, Rresult6))))) == Rresult2)
+        cout << Rstring2 << endl;
+    if ( smaller ( Rresult1 , smaller(Rresult2,smaller (Rresult3, smaller(Rresult4, smaller (Rresult5, Rresult6))))) == Rresult3)
+        cout << Rstring3 << endl;
+    if ( smaller ( Rresult1 , smaller(Rresult2,smaller (Rresult3, smaller(Rresult4, smaller (Rresult5, Rresult6))))) == Rresult4)
+        cout << Rstring4 << endl;
+    if ( smaller ( Rresult1 , smaller(Rresult2,smaller (Rresult3, smaller(Rresult4, smaller (Rresult5, Rresult6))))) == Rresult5)
+        cout << Rstring5 << endl;
+    if ( smaller ( Rresult1 , smaller(Rresult2,smaller (Rresult3, smaller(Rresult4, smaller (Rresult5, Rresult6))))) == Rresult6)
+        cout << Rstring6 << endl;
+    
+    
+    
+    cout << "Final Blue team "<<smaller ( Bresult1 , smaller(Bresult2,smaller (Bresult3, smaller(Bresult4, smaller (Bresult5, Bresult6)))))/60 << ":"<<smaller ( Bresult1 , smaller(Bresult2,smaller (Bresult3, smaller(Bresult4, smaller (Bresult5, Bresult6)))))%60 << " s"<< endl;
+    if ( smaller ( Bresult1 , smaller(Bresult2,smaller (Bresult3, smaller(Bresult4, smaller (Bresult5, Bresult6))))) == Bresult1)
+        cout << Bstring1 << endl;
+    if ( smaller ( Bresult1 , smaller(Bresult2,smaller (Bresult3, smaller(Bresult4, smaller (Bresult5, Bresult6))))) == Bresult2)
+        cout << Bstring2 << endl;
+    if ( smaller ( Bresult1 , smaller(Bresult2,smaller (Bresult3, smaller(Bresult4, smaller (Bresult5, Bresult6))))) == Bresult3)
+        cout << Bstring3 << endl;
+    if ( smaller ( Bresult1 , smaller(Bresult2,smaller (Bresult3, smaller(Bresult4, smaller (Bresult5, Bresult6))))) == Bresult4)
+        cout << Bstring4 << endl;
+    if ( smaller ( Bresult1 , smaller(Bresult2,smaller (Bresult3, smaller(Bresult4, smaller (Bresult5, Bresult6))))) == Bresult5)
+        cout << Bstring5 << endl;
+    if ( smaller ( Bresult1 , smaller(Bresult2,smaller (Bresult3, smaller(Bresult4, smaller (Bresult5, Bresult6))))) == Bresult6)
+        cout << Bstring6 << endl;
+    
+    
+    
+    cout << "Final Green team "<<smaller ( Gresult1 , smaller(Gresult2,smaller (Gresult3, smaller(Gresult4, smaller (Gresult5, Gresult6)))))/60 << ":"<<smaller ( Gresult1 , smaller(Gresult2,smaller (Gresult3, smaller(Gresult4, smaller (Gresult5, Gresult6)))))%60 << " s"<< endl;
+    if ( smaller ( Gresult1 , smaller(Gresult2,smaller (Gresult3, smaller(Gresult4, smaller (Gresult5, Gresult6))))) == Bresult6)
+        cout << Bstring6 << endl;
+    if ( smaller ( Gresult1 , smaller(Gresult2,smaller (Gresult3, smaller(Gresult4, smaller (Gresult5, Gresult6))))) == Bresult1)
+        cout << Bstring1 << endl;
+    if ( smaller ( Gresult1 , smaller(Gresult2,smaller (Gresult3, smaller(Gresult4, smaller (Gresult5, Gresult6))))) == Bresult2)
+        cout << Bstring2 << endl;
+    if ( smaller ( Gresult1 , smaller(Gresult2,smaller (Gresult3, smaller(Gresult4, smaller (Gresult5, Gresult6))))) == Bresult3)
+        cout << Bstring3 << endl;
+    if ( smaller ( Gresult1 , smaller(Gresult2,smaller (Gresult3, smaller(Gresult4, smaller (Gresult5, Gresult6))))) == Bresult4)
+        cout << Bstring4 << endl;
+    if ( smaller ( Gresult1 , smaller(Gresult2,smaller (Gresult3, smaller(Gresult4, smaller (Gresult5, Gresult6))))) == Bresult5)
+        cout << Bstring5 << endl;
+    
+
+
+    cout << " ---------------------------------------------------------------"<< endl;
+}
+
+
+
 
 
 
@@ -445,6 +755,10 @@ int main ()
     
     object4(1);
     object4(2);
+    
+    object5(1);
+    object5(2);
+
 
     
 
