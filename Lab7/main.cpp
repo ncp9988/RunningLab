@@ -303,6 +303,14 @@ void object4(int heat) {
     string blueplace2 = "";
     int blue3 = 999;
     string blueplace3 = "";
+    
+    
+    int g1 = 999;
+    string gplace1= "";
+    int g2 = 999;
+    string gplace2 = "";
+    int g3 = 999;
+    string gplace3 = "";
 
     
     for (int i =1; i <= totalRunner("Result.txt"); i++)
@@ -332,7 +340,7 @@ void object4(int heat) {
             {
                 redplace3 = redplace2;
                 red3= red2;
-                redplace2 = total;
+                red2 = total;
                 redplace2 = name;
             }
             else if (total < red3)
@@ -343,6 +351,9 @@ void object4(int heat) {
             
             
         }
+        
+        
+        
         if (team == "Blue")
         {
             if (total < blue1)
@@ -359,25 +370,53 @@ void object4(int heat) {
             {
                 blueplace3 = blueplace2;
                 blue3= blue2;
-                blueplace2 = total;
+                blue2 = total;
                 blueplace2 = name;
             }
             else if (total < blue3)
             {
-                blueplace3 = total;
+                blue3 = total;
                 blueplace3 = name;
             }
             
             
         }
-
+        
+        
+        if (team == "Green")
+        {
+            if (total < g1)
+            {
+                g3 = g2;
+                gplace3= gplace2;
+                g2 = g1;
+                gplace2= gplace1;
+                g1 = total;
+                gplace1 = name;
+                
+            }
+            else if (total < g2)
+            {
+                gplace3 = gplace2;
+                g3= g2;
+                g2 = total;
+                gplace2 = name;
+            }
+            else if (total < g3)
+            {
+                g3 = total;
+                gplace3 = name;
+            }
+            
+            
+        }
         
         
         
     }
-    cout << "Red: " << redplace1 << " "<< redplace2<< " " << redplace3<< endl;
-    cout << "Blue: " << blueplace1 << " "<< blueplace2<< " " << blueplace3<< endl;
-    //cout << "Green: " << place1 << " "<< place2<< " " << place3<< endl;
+    cout << "Red: " << redplace1 << " "<< redplace2<< " " << redplace3<<", Overall time: " << (red1+red2+red3)/3/60 << ":" << (red1+red2+red3)/3%60 << "s (avg)"<< endl;
+    cout << "Blue: " << blueplace1 << " "<< blueplace2<< " " << blueplace3<<", Overall time: " << (blue1+blue2+blue3)/3/60 << ":" << (blue1+blue2+blue3)/3%60 << "s (avg)"<< endl;
+    cout << "Green: " << gplace1 << " "<< gplace2<< " " << gplace3<<", Overall time: " << (g1+g2+g3)/3/60 << ":" << (g1+g2+g3)/3%60 << "s (avg)"<< endl;
 
    
     cout << " ---------------------------------------------------------------"<< endl;
@@ -405,6 +444,7 @@ int main ()
     object3(2);
     
     object4(1);
+    object4(2);
 
     
 
