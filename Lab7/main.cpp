@@ -290,12 +290,21 @@ void object4(int heat) {
     string greenTeam = " ";
     
     int red1 = 999;
-    string redplace1 = "";
+    string redplace1= "";
     int red2 = 999;
     string redplace2 = "";
     int red3 = 999;
     string redplace3 = "";
 
+    
+    int blue1 = 999;
+    string blueplace1= "";
+    int blue2 = 999;
+    string blueplace2 = "";
+    int blue3 = 999;
+    string blueplace3 = "";
+
+    
     for (int i =1; i <= totalRunner("Result.txt"); i++)
     {
         string name = readName(infile);
@@ -334,68 +343,40 @@ void object4(int heat) {
             
             
         }
-//        if (team == "Blue")
-//        {
-//            if (total < place1time)
-//            {
-//                place3time = place2time;
-//                place3= place2;
-//                place2time = place1time;
-//                place2= place1;
-//                place1time = total;
-//                place1 = name;
-//
-//            }
-//            else if (total < place2time)
-//            {
-//                place3time = place2time;
-//                place3= place2;
-//                place2time = total;
-//                place2 = name;
-//            }
-//            else if (total < place3time)
-//            {
-//                place3time = total;
-//                place3 = name;
-//            }
-//            cout << "Blue: " << place1 << " "<< place2<< " " << place3<< endl;
-//
-//        }
-//            blueTeam += name+ " ";
-//        if (team == "Green")
-//        {
-//            if (total < place1time)
-//            {
-//                place3time = place2time;
-//                place3= place2;
-//                place2time = place1time;
-//                place2= place1;
-//                place1time = total;
-//                place1 = name;
-//
-//            }
-//            else if (total < place2time)
-//            {
-//                place3time = place2time;
-//                place3= place2;
-//                place2time = total;
-//                place2 = name;
-//            }
-//            else if (total < place3time)
-//            {
-//                place3time = total;
-//                place3 = name;
-//            }
-//            cout << "Green: " << place1 << " "<< place2<< " " << place3<< endl;
-//
-//        }
-//            greenTeam += name+ " ";
+        if (team == "Blue")
+        {
+            if (total < blue1)
+            {
+                blue3 = blue2;
+                blueplace3= blueplace2;
+                blue2 = blue1;
+                blueplace2= blueplace1;
+                blue1 = total;
+                blueplace1 = name;
+                
+            }
+            else if (total < blue2)
+            {
+                blueplace3 = blueplace2;
+                blue3= blue2;
+                blueplace2 = total;
+                blueplace2 = name;
+            }
+            else if (total < blue3)
+            {
+                blueplace3 = total;
+                blueplace3 = name;
+            }
+            
+            
+        }
+
         
         
         
     }
     cout << "Red: " << redplace1 << " "<< redplace2<< " " << redplace3<< endl;
-    //cout << "Blue: " << place1 << " "<< place2<< " " << place3<< endl;
+    cout << "Blue: " << blueplace1 << " "<< blueplace2<< " " << blueplace3<< endl;
     //cout << "Green: " << place1 << " "<< place2<< " " << place3<< endl;
 
    
