@@ -9,6 +9,8 @@
 #include <fstream>
 #include <string>
 using namespace std;
+ifstream infile;
+
 
 int smaller (int x, int y)
 {
@@ -46,6 +48,42 @@ int readTime (ifstream&infile)
     infile.ignore(10, ':');
     infile>> second;
     return minute*60+second;
+    
+}
+
+int getRunnerTime ( string name, int heatNumber)
+{
+    string line;
+    if (heatNumber==1)
+    {
+       // getline(infile, line);
+        name = readName(infile);
+        string team = readName(infile);
+        
+        int time1= readTime(infile);
+        int time2= readTime(infile);
+        int time3= readTime(infile);
+        int total =time1 + time2 + time3;
+        
+        return total;
+
+    }
+    else
+    {
+       // getline(infile, line);
+        string runner;
+        for (int i =0; i <= totalRunner("Result.txt")+1 ; i++)
+            getline(infile, runner);
+        name = readName(infile);
+        string team = readName(infile);
+        
+        int time1= readTime(infile);
+        int time2= readTime(infile);
+        int time3= readTime(infile);
+        int total =time1 + time2 + time3;
+        return total;
+
+    }
     
 }
 
@@ -738,6 +776,147 @@ void object5(int heat) {
 
 
 
+//void object6()
+//{
+//    cout << "OBJECT 6:" << endl;
+//    cout << " " << endl;
+//
+//    ifstream infile;
+//    infile.open("Result.txt");
+//    string line;
+//
+//    string nameH1, teamH1, nameH2, teamH2;
+//    int time1H1, time2H1, time3H1, time1H2, time2H2, time3H2;
+//
+//    for (int i =1; i <= totalRunner("Result.txt"); i++)
+//    {
+//
+//        getline(infile, line);
+//        nameH1 = readName(infile);
+//        teamH1 = readName(infile);
+//
+//        time1H1 = readTime(infile);
+//        time2H1 = readTime(infile);
+//        time3H1 = readTime(infile);
+//
+//
+//        getline(infile, line);
+//        string runner;
+//
+//        for (int i =0; i <= totalRunner("Result.txt")+1 ; i++)
+//            getline(infile, runner);
+//
+//        nameH2 = readName(infile);
+//        teamH2 = readName(infile);
+//
+//        time1H2 = readTime(infile);
+//        time2H2 = readTime(infile);
+//        time3H2 = readTime(infile);
+//
+//        cout << nameH1 << " "<< teamH1 << " "<< time1H1<< " "<< time2H1<< " "<< time3H1<< endl;
+//        cout << nameH2 << " "<< teamH2 << " "<< time1H2<< " "<< time2H1<< " "<< time3H1<< endl;
+//    }
+//    //    cout << " ---------------------------------------------------------------"<< endl;
+//
+//}
+    
+
+    
+    
+
+//void object6(int heat) {
+//    cout << "OBJECT 6:" << endl;
+//    cout << " " << endl;
+//
+//    ifstream infile;
+//    infile.open("Result.txt");
+//    string line;
+//    int total1;
+//    int total2;
+//    string name, team;
+//
+//
+//    if (heat==1)
+//    {
+//        getline(infile, line);
+//        cout << "Heat 1:"<< endl;
+//        for (int i =1; i <= totalRunner("Result.txt"); i++)
+//        {
+//            string name = readName(infile);
+//            string team = readName(infile);
+//
+//            int time1= readTime(infile);
+//            int time2= readTime(infile);
+//            int time3= readTime(infile);
+//            total1 = time1 + time2 + time3;
+//
+//
+//            cout << name << " "<< team <<" "<< total1<< " s" <<endl;
+//
+//        }
+//
+//    }
+//    else
+//    {
+//        getline(infile, line);
+//        string runner;
+//        for (int i =0; i <= totalRunner("Result.txt")+1 ; i++)
+//            getline(infile, runner);
+//
+//        cout << "Heat 2:"<< endl;
+//        for (int i =1; i <= totalRunner("Result.txt"); i++)
+//        {
+//            string name = readName(infile);
+//            string team = readName(infile);
+//
+//            int time1= readTime(infile);
+//            int time2= readTime(infile);
+//            int time3= readTime(infile);
+//            total2 =time1 + time2 + time3;
+//
+//            cout << name << " "<< team <<" "<< total2<< " s" <<endl;
+//
+//
+//        }
+//       // int different = total1- total2;
+//        cout << different << endl;
+//        //cout << name << " "<< team <<" "<< total1<< " s" <<endl;
+//        //cout << name << " "<< team <<" "<< total2<< " s" <<endl;
+//
+//    };
+//
+//
+//
+//
+//
+//    cout << " "<< endl;
+//    cout << " ---------------------------------------------------------------"<< endl;
+//}
+
+
+void object6(string filename)
+{
+    string line;
+    ifstream infile;
+    infile.open(filename);
+    getline(infile, line);
+    
+    // for each runner
+    for ( int i =0; i < totalRunner("Result.txt"); i++)
+    {
+        // get runner name
+        string name;
+        infile >> name;
+        int seconds = getRunnerTime(name,1) ;
+        int seconds2 = getRunnerTime(name,2) ;
+        cout << seconds<<endl;
+        cout << seconds2<<endl;
+        int difference = abs(seconds - seconds2);
+        getline (infile,line);
+        cout << difference << endl;
+    }
+}
+
 
 
 
@@ -758,11 +937,19 @@ int main ()
     
     object5(1);
     object5(2);
+    
+    object6("Result.txt");
+    object6("Result.txt");
+
 
 
     
 
     }
+
+
+
+
 
 
 
