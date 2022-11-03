@@ -72,7 +72,7 @@ int getRunnerTime ( string name, int heatNumber)
     {
        // getline(infile, line);
         string runner;
-        for (int i =0; i <= totalRunner("Result.txt")+1 ; i++)
+        for (int i =0; i <= totalRunner("Result.txt")+3 ; i++)
             getline(infile, runner);
         name = readName(infile);
         string team = readName(infile);
