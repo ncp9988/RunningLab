@@ -74,7 +74,7 @@ int getRunnerTime ( string name, int heatNumber)
         string runner;
         for (int i =0; i <= totalRunner("Result.txt")+3 ; i++)
             getline(infile, runner);
-        name = readName(infile);
+        //name = readName(infile);
         string team = readName(infile);
         
         int time1= readTime(infile);
@@ -180,6 +180,8 @@ void object2(int heat) {
         string runner;
         for (int i =0; i <= totalRunner("Result.txt")+1 ; i++)
             getline(infile, runner);
+        getline(infile, runner);
+
         
         cout << "Heat 2:"<< endl;
     };
@@ -228,7 +230,7 @@ void object2(int heat) {
 //        above += name + " ";
     
     
-    //cout << total1<< " " << total2 << " "<< total3 << endl;
+    cout << total1<< " " << total2 << " "<< total3 << endl;
    
     cout <<"Avg-lap1: "<< (total1/totalRunner("Result.txt"))/60<< ":"<<(total1/totalRunner("Result.txt"))%60<< "s"<< endl;
     
